@@ -1,0 +1,7 @@
+﻿  Main.cpp
+c:\users\s189066\source\repos\customcontandsorting\customcontandsorting\main.cpp(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontandsorting\customcontandsorting\main.cpp(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontandsorting\customcontandsorting\main.cpp(51): warning C4018: '<=': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontandsorting\customcontandsorting\main.cpp(52): warning C4018: '>=': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontandsorting\customcontandsorting\main.cpp(52): warning C4018: '<': signed/unsigned mismatch
+  CustomContAndSorting.vcxproj -> C:\Users\s189066\source\repos\CustomContAndSorting\Debug\CustomContAndSorting.exe
