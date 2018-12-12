@@ -1,0 +1,8 @@
+﻿  Main.cpp
+c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(51): warning C4018: '<=': signed/unsigned mismatch
+c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(52): warning C4018: '>=': signed/unsigned mismatch
+c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(52): warning C4018: '<': signed/unsigned mismatch
+  LINK : C:\Users\s189066\Downloads\CustomContainers-Algorithms\Debug\CustomContAndSorting.exe not found or not built by the last incremental link; performing full link
+LINK : fatal error LNK1104: cannot open file 'raylib.lib'
