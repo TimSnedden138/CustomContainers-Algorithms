@@ -12,7 +12,8 @@ class tVector
 
 public:
 	tVector();							// initializes the vector's default values
-	~tVector();                         // destroys the underlying array
+	~tVector();   // destroys the underlying array
+	tVector(const tVector&);
 	T *data();                          // returns a pointer to the underlying array
 	void reserve(size_t newCapacity);   // resizes the vector to at least this many elements
 	void push_back(const T &value);     // adds an element to the end of the vector
@@ -39,7 +40,8 @@ tVector<T>::tVector()
 template<typename T>
 tVector<T>::~tVector()
 {
-
+	delete[] arr;
+	
 }
 
 template<typename T>
@@ -68,7 +70,7 @@ template<typename T>
 void tVector<T>::push_back(const T & value)
 {
 	if (arrSize >= arrCapacity) {
-		reserve(1);
+		reserve(value);
 	}
 	else {
 		reserve(arrCapacity * GROWTH_FACTOR);
@@ -106,7 +108,7 @@ inline T & tVector<T>::operator[](size_t index)
 template<typename T>
 void tVector<T>::resize(size_t newsize)
 {
-	if (!newsize > arrCapacity) {
+	if (newsize > arrCapacity) {
 		return;
 	}
 	else {
@@ -117,13 +119,25 @@ void tVector<T>::resize(size_t newsize)
 template<typename T>
 void tVector<T>::shrink_to_fit()
 {
+	if (arrCapacity = arrSize)
+	{
+		return;
+	}
+	T *temp = new T[arrSize];
+	for (size_t i = 0; i < arrSize; i++)
+	{
+		temp[i] = arr[i];
+	}
+	delete[] arr;
+
+	arr = temp;
 	arrCapacity = arrSize;
 }
 
 template<typename T>
 void tVector<T>::clear()
 {
-	arrSize -= arrSize;
+	arrSize = 0;
 }
 
 template<typename T>

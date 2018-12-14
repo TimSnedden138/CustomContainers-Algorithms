@@ -1,18 +1,21 @@
+//#include"Vector.h"
+#include"Queue.h"
 #include"LinkedList.h"
-#include"Vector.h"
 #include<iostream>
 void MergeSort(int * arr, size_t p, size_t r);
 void Merge(int * arr, size_t p, size_t q, size_t r);
-int sortarr[8]{25,14,42,15,1666,147,45,222222 };
+int sortarr[8]{25,14,42,15,1666,147,45,28954 };
 
 int main(){
 	std::cout << "LINKED LISTS"<<std::endl;
 	tForwardList<int> link;
-	tVector<int>tI;
+	//tVector<int>tI;
+	queue<int>tQ;
 	link.push_front(2);
 	link.push_front(57);
 	link.push_front(89);
 	link.push_front(42);
+	link.remove(42);
 	std::cout << link.front() << std::endl;
 	std::cout << "MERGE SORT" << std::endl;
 	for (int i = 0; i < 8; i++) {

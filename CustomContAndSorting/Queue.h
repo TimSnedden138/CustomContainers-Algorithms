@@ -10,7 +10,7 @@ class queue
 {
 	T *arr; 		// Array for Storing
 	int capacity;   // Capacity of the queue
-	int front;  	// Front element
+	int frontA;  	// Front element
 	int rear;   	// Rear Element
 	int count;  	// Current Size
 
@@ -18,20 +18,23 @@ public:
 	queue(int size = SIZE);
 
 	void dequeue();
-	void enqueue(T x);
+	void enqueue(T& item);
 	T peek();
-	int size();
+	int size() const;
 	bool isEmpty();
 	bool isFull();
+
+	T& front();                           // returns the front-most element
+	T& back();                            // returns the back-most element
 };
 
 // Constructor
-template <class X>
+template <class T>
 queue<T>::queue(int size)
 {
 	arr = new T[size];
 	capacity = size;
-	front = 0;
+	frontA = 0;
 	rear = -1;
 	count = 0;
 }
@@ -47,15 +50,15 @@ void queue<T>::dequeue()
 		exit(EXIT_FAILURE);
 	}
 
-	cout << "Removing " << arr[front] << '\n';
+	cout << "Removing " << arr[frontA] << '\n';
 
-	front = (front + 1) % capacity;
+	frontA = (frontA + 1) % capacity;
 	count--;
 }
 
 //Add Element
 template <class T>
-void queue<T>::enqueue(T item)
+void queue<T>::enqueue(T& item)
 {
 	// check for queue overflow
 	if (isFull())
@@ -80,12 +83,12 @@ T queue<T>::peek()
 		cout << "Program is being fixed";
 		exit(EXIT_FAILURE);
 	}
-	return arr[front];
+	return &arr[frontA];
 }
 
 //Return Size
 template <class T>
-int queue<T>::size()
+int queue<T>::size() const
 {
 	return count;
 }
@@ -102,4 +105,16 @@ template <class T>
 bool queue<T>::isFull()
 {
 	return (size() == capacity);
+}
+
+template<class T>
+inline T & queue<T>::front()
+{
+	return arr[frontA];
+}
+
+template<class T>
+inline T & queue<T>::back()
+{
+	return arr[back];
 }
