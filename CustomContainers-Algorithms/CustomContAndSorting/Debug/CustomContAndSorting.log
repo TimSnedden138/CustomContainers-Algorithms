@@ -1,8 +1,21 @@
 ﻿  Main.cpp
-c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(43): warning C4018: '<': signed/unsigned mismatch
-c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(46): warning C4018: '<': signed/unsigned mismatch
-c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(51): warning C4018: '<=': signed/unsigned mismatch
-c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(52): warning C4018: '>=': signed/unsigned mismatch
-c:\users\s189066\downloads\customcontainers-algorithms\customcontandsorting\main.cpp(52): warning C4018: '<': signed/unsigned mismatch
-  LINK : C:\Users\s189066\Downloads\CustomContainers-Algorithms\Debug\CustomContAndSorting.exe not found or not built by the last incremental link; performing full link
-LINK : fatal error LNK1104: cannot open file 'raylib.lib'
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\main.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\main.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\queue.h(53): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\queue.h(52): note: while compiling class template member function 'void queue<int>::pop(void)'
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\main.cpp(47): note: see reference to function template instantiation 'void queue<int>::pop(void)' being compiled
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\main.cpp(14): note: see reference to class template instantiation 'queue<int>' being compiled
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\vector.h(86): warning C4018: '<': signed/unsigned mismatch
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\vector.h(81): note: while compiling class template member function 'void tVector<int>::reserve(size_t)'
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\vector.h(102): note: see reference to function template instantiation 'void tVector<int>::reserve(size_t)' being compiled
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\vector.h(64): note: while compiling class template member function 'tVector<int>::tVector(const tVector<int> &)'
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\main.cpp(25): note: see reference to function template instantiation 'tVector<int>::tVector(const tVector<int> &)' being compiled
+  c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\main.cpp(13): note: see reference to class template instantiation 'tVector<int>' being compiled
+  Merge.cpp
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\merge.cpp(18): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\merge.cpp(21): warning C4018: '<': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\merge.cpp(26): warning C4018: '<=': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\merge.cpp(27): warning C4018: '>=': signed/unsigned mismatch
+c:\users\s189066\source\repos\customcontainers-algorithms\customcontandsorting\merge.cpp(27): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  CustomContAndSorting.vcxproj -> C:\Users\s189066\source\repos\CustomContainers-Algorithms\Debug\CustomContAndSorting.exe

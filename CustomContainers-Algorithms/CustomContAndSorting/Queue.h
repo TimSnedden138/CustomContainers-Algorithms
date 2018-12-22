@@ -1,105 +1,99 @@
 #pragma once
-#include <iostream>
-#include <cstdlib>
-using namespace std;
+#include "Vector.h"
+#include <queue>
 
-// define default capacity
-#define SIZE 10
-template <class T>
-class queue 
+template <typename T>
+class queue
 {
-	T *arr; 		// Array for Storing
-	int capacity;   // Capacity of the queue
-	int front;  	// Front element
-	int rear;   	// Rear Element
-	int count;  	// Current Size
+	tVector<T> vec;                       // contains the data for a queue
 
 public:
-	queue(int size = SIZE);
+	queue();                             // default initializes the queue
+	queue(size_t count, const T& value); // constructs a queue with the given number of elements 
+										  // each element is initialized by copying the given value
 
-	void dequeue();
-	void enqueue(T x);
-	T peek();
-	int size();
-	bool isEmpty();
-	bool isFull();
+	void push(const T& value);            // adds an element to the top of the Queue
+	void pop();                           // drops the top-most element of the Queue
+
+	T& front();                           // returns the front-most element
+	T& back();                            // returns the back-most element
+
+	size_t size() const;                  // returns current number of elements
+
+	const T& front() const;
+	const T& back() const;
+
+	bool empty() const;
+
 };
 
-// Constructor
-template <class X>
-queue<T>::queue(int size)
-{
-	arr = new T[size];
-	capacity = size;
-	front = 0;
-	rear = -1;
-	count = 0;
-}
-
-//Remove Element
-template <class T>
-void queue<T>::dequeue()
-{
-	// check for queue underflow
-	if (isEmpty())
+	template<typename T>
+	inline queue<T>::queue()
 	{
-		cout << "Program is being fixed";
-		exit(EXIT_FAILURE);
+	}
+	template<typename T>
+	inline queue<T>::queue(size_t count, const T & value)
+	{
+		for (int i = 0; i < count; i++) {
+			vec.push_back(value);
+			std::cout << value << std::endl;
+		}
+	}
+	// adds an element to the top of the Queue
+	template<typename T>
+	inline void queue<T>::push(const T & value)
+	{
+		vec.push_back(value);
+		std::cout << value << std::endl;
+	}
+	// drops the top-most element of the Queue
+	template<typename T>
+	inline void queue<T>::pop()
+	{
+		for (int i = 0; i < size() - 1; i++) {
+			vec.at(i) = vec.at(i + 1);
+			std::cout << vec.at(i + 1) << std::endl;
+		}
+	}
+	// returns the front-most element
+	template<typename T>
+	inline T & queue<T>::front()
+	{
+		return vec.at(0);
+	}
+	// returns the back-most element
+	template<typename T>
+	inline T & queue<T>::back()
+	{
+		return vec.at(vec.size() - 1);
+	}
+	// returns current number of elements
+	template<typename T>
+	inline size_t queue<T>::size() const
+	{
+		return vec.size();
 	}
 
-	cout << "Removing " << arr[front] << '\n';
-
-	front = (front + 1) % capacity;
-	count--;
-}
-
-//Add Element
-template <class T>
-void queue<T>::enqueue(T item)
-{
-	// check for queue overflow
-	if (isFull())
+	template<typename T>
+	inline const T & queue<T>::front() const
 	{
-		cout << "Program is being fixed";
-		exit(EXIT_FAILURE);
+		return vec.at(0);
 	}
 
-	cout << "Inserting " << item << '\n';
-
-	rear = (rear + 1) % capacity;
-	arr[rear] = item;
-	count++;
-}
-
-//Return Element
-template <class T>
-T queue<T>::peek()
-{
-	if (isEmpty()) 
+	template<typename T>
+	inline const T & queue<T>::back() const
 	{
-		cout << "Program is being fixed";
-		exit(EXIT_FAILURE);
+		return vec.at(vec.size() - 1);
 	}
-	return arr[front];
-}
 
-//Return Size
-template <class T>
-int queue<T>::size()
-{
-	return count;
-}
-
-//Return if the queue is empty or not
-template <class T>
-bool queue<T>::isEmpty()
-{
-	return (size() == 0);
-}
-
-//Return if the queue is full or not
-template <class T>
-bool queue<T>::isFull()
-{
-	return (size() == capacity);
-}
+	template<typename T>
+	inline bool queue<T>::empty() const
+	{
+		if (size() == 0) {
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
